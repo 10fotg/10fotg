@@ -1,0 +1,35 @@
+{% extends "frontend/layout.html" %}
+{% load humanize %}
+
+{%block content%}
+<div class="blog-top clearfix">
+    <h4 class="pull-left px-5 py-3">Writer "{{writer}}" <a href="#"><i class="fa fa-rss"></i></a></h4>
+</div><!-- end blog-top -->
+<div class="container-lg ">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 ">
+        {% for blog in blogs %}
+        <div class="col ">
+          <div class="card mb-3 rounded-3 shadow-sm border-light">
+            <div class="card-header py-3">
+            <img src="{{blog.image.url}}" alt="" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <div class="blog-meta"> 
+                    <span><button type="button" class="btn btn-warning "><a class="text-decoration-none" style ="color:#000000"  href="{%url 'searchCategory' blog.category_id %}" title="">{{blog.category}}</a></button></span>  
+                    <h4><a class="text-decoration-none" href="{%url 'blogDetail' blog.id%}" title="">{{blog.name}}</a></h4>
+                    <p>{{blog.description}}</p>
+                    <small><a class="text-decoration-none" href="{%url 'searchCategory' blog.category_id %}"title="">{{blog.category}}</a></small>
+                    <small><a class="text-decoration-none" href="#" title="">by {{blog.created}}</a></small>
+                    <small><a class="text-decoration-none" href="#" title=""><i class="fa fa-eye"></i> {{blog.views | intcomma}}</a></a></small>
+                    <a class="w-40 btn btn-sm btn-outline-warning" href="{{blog.fileupload.url}}">GET</a>
+                </div><!-- end meta -->
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</div>
+
+
+{%endblock%}

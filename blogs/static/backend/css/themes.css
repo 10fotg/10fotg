@@ -1,0 +1,458 @@
+/*
+ *  Document   : themes.css
+ *  Author     : pixelcave
+ *  Description: The themes stylesheet of the template. The classes can be used to
+ *  alter the text, the background or the border color of an element individually
+ *
+ */
+
+/*
+=================================================================
+THEME DEFAULT
+=================================================================
+*/
+
+.themed-color-default {
+    color: #e5883c ;
+}
+
+.themed-border-default {
+    border-color: #e5883c ;
+}
+
+.themed-background-default {
+    background-color: #e5883c ;
+}
+
+.themed-color-dark-default {
+    color: #394263 ;
+}
+
+.themed-border-dark-default {
+    border-color: #394263 ;
+}
+
+.themed-background-dark-default {
+    background-color: #394263 ;
+}
+
+/*
+=================================================================
+THEME NIGHT
+=================================================================
+*/
+
+.themed-color-night {
+    color: #888888 ;
+}
+
+.themed-border-night {
+    border-color: #888888 ;
+}
+
+.themed-background-night {
+    background-color: #888888 ;
+}
+
+.themed-color-dark-night {
+    color: #333333 ;
+}
+
+.themed-border-dark-night {
+    border-color: #333333 ;
+}
+
+.themed-background-dark-night {
+    background-color: #333333 ;
+}
+
+/*
+=================================================================
+THEME AMETHYST
+=================================================================
+*/
+
+.themed-color-amethyst {
+    color: #af64cc ;
+}
+
+.themed-border-amethyst {
+    border-color: #af64cc ;
+}
+
+.themed-background-amethyst {
+    background-color: #af64cc ;
+}
+
+.themed-color-dark-amethyst {
+    color: #583a63 ;
+}
+
+.themed-border-dark-amethyst {
+    border-color: #583a63 ;
+}
+
+.themed-background-dark-amethyst {
+    background-color: #583a63 ;
+}
+
+/*
+=================================================================
+THEME MODERN
+=================================================================
+*/
+
+.themed-color-modern {
+    color: #46b7bf ;
+}
+
+.themed-border-modern {
+    border-color: #46b7bf ;
+}
+
+.themed-background-modern {
+    background-color: #46b7bf ;
+}
+
+.themed-color-dark-modern {
+    color: #3b3f40 ;
+}
+
+.themed-border-dark-modern {
+    border-color: #3b3f40 ;
+}
+
+.themed-background-dark-modern {
+    background-color: #3b3f40 ;
+}
+
+/*
+=================================================================
+THEME AUTUMN
+=================================================================
+*/
+
+.themed-color-autumn {
+    color: #e67e22 ;
+}
+
+.themed-border-autumn {
+    border-color: #e67e22 ;
+}
+
+.themed-background-autumn {
+    background-color: #e67e22 ;
+}
+
+.themed-color-dark-autumn {
+    color: #4a392b ;
+}
+
+.themed-border-dark-autumn {
+    border-color: #4a392b ;
+}
+
+.themed-background-dark-autumn {
+    background-color: #4a392b ;
+}
+
+/*
+=================================================================
+THEME FLATIE
+=================================================================
+*/
+
+.themed-color-flatie {
+    color: #1ec1b8 ;
+}
+
+.themed-border-flatie {
+    border-color: #1ec1b8 ;
+}
+
+.themed-background-flatie {
+    background-color: #1ec1b8 ;
+}
+
+.themed-color-dark-flatie {
+    color: #32323a ;
+}
+
+.themed-border-dark-flatie {
+    border-color: #32323a ;
+}
+
+.themed-background-dark-flatie {
+    background-color: #32323a ;
+}
+
+/*
+=================================================================
+THEME SPRING
+=================================================================
+*/
+
+.themed-color-spring {
+    color: #27ae60 ;
+}
+
+.themed-border-spring {
+    border-color: #27ae60 ;
+}
+
+.themed-background-spring {
+    background-color: #27ae60 ;
+}
+
+.themed-color-dark-spring {
+    color: #344a3d ;
+}
+
+.themed-border-dark-spring {
+    border-color: #344a3d ;
+}
+
+.themed-background-dark-spring {
+    background-color: #344a3d ;
+}
+
+/*
+=================================================================
+THEME FANCY
+=================================================================
+*/
+
+.themed-color-fancy {
+    color: #d9416c ;
+}
+
+.themed-border-fancy {
+    border-color: #d9416c ;
+}
+
+.themed-background-fancy {
+    background-color: #d9416c ;
+}
+
+.themed-color-dark-fancy {
+    color: #352b4e ;
+}
+
+.themed-border-dark-fancy {
+    border-color: #352b4e ;
+}
+
+.themed-background-dark-fancy {
+    background-color: #352b4e ;
+}
+
+/*
+=================================================================
+THEME FIRE
+=================================================================
+*/
+
+.themed-color-fire {
+    color: #e74c3c ;
+}
+
+.themed-border-fire {
+    border-color: #e74c3c ;
+}
+
+.themed-background-fire {
+    background-color: #e74c3c ;
+}
+
+.themed-color-dark-fire {
+    color: #4a2e2b ;
+}
+
+.themed-border-dark-fire {
+    border-color: #4a2e2b ;
+}
+
+.themed-background-dark-fire {
+    background-color: #4a2e2b ;
+}
+
+/*
+=================================================================
+THEME CORAL
+=================================================================
+*/
+
+.themed-color-coral {
+    color: #ff6b6b ;
+}
+
+.themed-border-coral {
+    border-color: #ff6b6b ;
+}
+
+.themed-background-coral {
+    background-color: #ff6b6b ;
+}
+
+.themed-color-dark-coral {
+    color: #3c3e4f ;
+}
+
+.themed-border-dark-coral {
+    border-color: #3c3e4f ;
+}
+
+.themed-background-dark-coral {
+    background-color: #3c3e4f ;
+}
+
+/*
+=================================================================
+THEME LAKE
+=================================================================
+*/
+
+.themed-color-lake {
+    color: #e38e7b ;
+}
+
+.themed-border-lake {
+    border-color: #e38e7b ;
+}
+
+.themed-background-lake {
+    background-color: #e38e7b ;
+}
+
+.themed-color-dark-lake {
+    color: #043e50 ;
+}
+
+.themed-border-dark-lake {
+    border-color: #043e50 ;
+}
+
+.themed-background-dark-lake {
+    background-color: #043e50 ;
+}
+
+/*
+=================================================================
+THEME FOREST
+=================================================================
+*/
+
+.themed-color-forest {
+    color: #0ead87 ;
+}
+
+.themed-border-forest {
+    border-color: #0ead87 ;
+}
+
+.themed-background-forest {
+    background-color: #0ead87 ;
+}
+
+.themed-color-dark-forest {
+    color: #3b322c ;
+}
+
+.themed-border-dark-forest {
+    border-color: #3b322c ;
+}
+
+.themed-background-dark-forest {
+    background-color: #3b322c ;
+}
+
+/*
+=================================================================
+THEME WATERLILY
+=================================================================
+*/
+
+.themed-color-waterlily {
+    color: #4ca5a9 ;
+}
+
+.themed-border-waterlily {
+    border-color: #4ca5a9 ;
+}
+
+.themed-background-waterlily {
+    background-color: #4ca5a9 ;
+}
+
+.themed-color-dark-waterlily {
+    color: #4f243e ;
+}
+
+.themed-border-dark-waterlily {
+    border-color: #4f243e ;
+}
+
+.themed-background-dark-waterlily {
+    background-color: #4f243e ;
+}
+
+/*
+=================================================================
+THEME EMERALD
+=================================================================
+*/
+
+.themed-color-emerald {
+    color: #69b899 ;
+}
+
+.themed-border-emerald {
+    border-color: #69b899 ;
+}
+
+.themed-background-emerald {
+    background-color: #69b899 ;
+}
+
+.themed-color-dark-emerald {
+    color: #07313a ;
+}
+
+.themed-border-dark-emerald {
+    border-color: #07313a ;
+}
+
+.themed-background-dark-emerald {
+    background-color: #07313a ;
+}
+
+
+/*
+=================================================================
+THEME BLACKBERRY
+=================================================================
+*/
+
+.themed-color-blackberry {
+    color: #148e81 ;
+}
+
+.themed-border-blackberry {
+    border-color: #148e81 ;
+}
+
+.themed-background-blackberry {
+    background-color: #148e81 ;
+}
+
+.themed-color-dark-blackberry {
+    color: #352738 ;
+}
+
+.themed-border-dark-blackberry {
+    border-color: #352738 ;
+}
+
+.themed-background-dark-blackberry {
+    background-color: #352738 ;
+}

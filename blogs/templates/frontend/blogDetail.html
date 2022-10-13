@@ -1,0 +1,30 @@
+{% extends "frontend/layout.html" %}
+{% load humanize %}
+{% block content %}
+
+        <div class="row justify-content-center align-item-center">
+        <img src="{{blog.image.url}}" class="img-fluid" style="width: 60vh;">
+        <div class="blog-title-area text-center ">
+            <span><button type="button" class=" btn btn-sm btn-secondary"><a class="text-decoration-none" style ="color:#ffffff"  href="{%url 'searchCategory' blog.category_id %}" title="">{{blog.category}}</a></button></span>  
+            <h5>{{blog.name}}</h5>
+            <div class="blog-meta big-meta">
+                <small><a href="#" class="text-decoration-none"style ="color:#e5883c">{{blog.created}}</a></small>
+                <small><a href="{% url 'searchWriter' blog.writer %}" class="text-decoration-none"style ="color:#e5883c">by {{blog.writer}}</a></small>
+                <small><a href="#" class="text-decoration-none"style ="color:#e5883c"><i class="fa fa-eye"></i> {{blog.views | intcomma}}</a></small>
+                <a class="w-40 btn btn-sm btn-outline-warning mt-1" style ="color:#e5883c" href="{{blog.fileupload.url}}">GET</a>
+            </div><!-- end meta -->
+
+
+<div class="blog-content">  
+{{blog.content | safe}}
+</div><!-- end content -->
+
+</div>
+
+  </div>
+
+
+
+</div><!-- end col -->
+
+{% endblock %}

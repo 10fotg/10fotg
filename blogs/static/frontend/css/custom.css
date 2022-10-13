@@ -1,0 +1,62 @@
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
+}
+.container-py3{
+  max-width: 100%;
+  
+  display: grid;
+  margin: auto;
+}
+.card-header{
+  
+  transition: 0.3s;
+}
+
+/* .container-lg{
+  padding-top: 50px;
+  padding-bottom: 50px;
+} */
+.navbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  padding-top: auto;
+}
+.card-header:hover{
+  
+  transform: scale(1.03);
+}
+#container{
+  width: 10%;
+  background-color: #27AE60;
+}
+
+  /* Finish nav*/
+ 
+
+/* unvisited link */
+a:link {
+  color:#f58220;
+}
+
+/* visited link */
+a:visited {
+  color: #eb7514;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ec0d88 ;
+}
+
+/* selected link */
+a:active {
+  color: #27AE60 ;
+} 
+
+.dmtop,
+.search-form .btn:hover,
+.search-form .btn:focus,
+.search-form .btn {
+    color: #0e0101 ;
+    background-color: #f58220 ;
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    {% load humanize %}
+   
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Site Metas -->
+    <title>SDN/ArtWork</title>    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'frontend/images/sdnicon.png' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'frontend/images/apple-touch-icon.png' %}">
+    <!-- Design fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link rel="stylesheet" href="{% static 'frontend/css/bootstrap.css' %} "> -->
+
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');</style>
+
+    <!-- FontAwesome Icons core CSS -->
+    <link href="{% static 'frontend/css/font-awesome.min.css ' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- CSS only -->
+    <link href="{% static 'frontend/css/custom.css' %}" rel="stylesheet"> 
+    <link href="{% static 'frontend/css/style.css' %}" rel="stylesheet">
+    
+
+    <!-- Responsive styles for this template -->
+    {% comment %} <link href="{% static 'frontend/css/responsive.css' %}" rel="stylesheet"> {% endcomment %}
+
+    <!-- Colors for this template -->
+    {% comment %} <link href="{% static 'frontend/css/colors.css' %}" rel="stylesheet"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> {% endcomment %}
+    
+    
+    
+
+    <!-- Version Tech CSS for this template -->
+    <!--<link href="{% static 'frontend/css/version/tech.css' %}" rel="stylesheet"> --> 
+    <!-- CSS only -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> 
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light ">           
+        <div class="container d-flex flex-wrap align-items-center justify-content-center">
+            <img class="d-block mx-auto" src="{% static 'frontend/images/version/Aw.svg ' %}" alt="" width="80" height="57">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item "><a class="nav-link" href="/">SDN/ArtWork</a></li>
+              <!--<li class="nav-item "><a class="nav-link" href="{% url 'member' %}">Editor</a></li>-->
+            </ul>
+            <form class="d-flex col-10" action="{% url 'search' %}", method="GET" role="search">
+                <div class="input-group ">
+                  <input type="text" name="title" class="form-control  me-2" placeholder="ค้นหา">
+                  <div class="input-group-append">
+                    <button class="btn btn-secondary md" style ="color:#808B96 text-warning" type="submit">Search</button>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+     
+<!--categories shows เมนู -->
+<div class="category px-5 py-2 mb-2 text-center d-none d-sm-block">
+
+    {% for category in categories %}
+    <span><a class="text-decoration-none px-2 " style ="color:#808B96" href="{%url 'searchCategory' category.id %}">{{category.name}}</a></span>          
+    {% endfor %}
+</div>
+
+<!--end categories-->
+
+
+<!--First สื่อทั้งหมด Secsion-->
+
+<h4 class="container d-flex flex-wrap px-5 py-3"class="">ArtWork(All) <a href="#"><i class="fa fa-rss px-2"></i></a></h4>
+
+    <div class="container-lg ">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 ">
+            {% for blog in blogs %}
+            <div class="col ">
+              <div class="card mb-3 rounded-3 shadow-sm border-light">
+                <div class="card-header py-3">
+                    
+                        <img src="{{blog.image.url}}" alt="" class="img-fluid">
+                    </div>
+                    <div class="card-body">
+                    <div class="blog-meta"> 
+                        <span><button type="button" class="btn btn-warning "><a class="text-decoration-none" style ="color:#000000"  href="{%url 'searchCategory' blog.category_id %}" title="">{{blog.category}}</a></button></span>  
+                        <h4><a class="text-decoration-none" href="{%url 'blogDetail' blog.id %}" title="">{{blog.name}}</a></h4>
+                        <!--<small><a class="text-decoration-none" href="#" title="">{{blog.created}}</a></small>
+                        <small><a class="text-decoration-none" href="{% url 'searchWriter' blog.writer %}" title="">by {{blog.writer}}</a></small>
+                        <small><a class="text-decoration-none" href="#" title=""><i class="fa fa-eye"></i> {{blog.views | intcomma}}</a></a></small>-->
+                        <a class="w-40 btn btn-sm btn-outline-warning mt-1" href="{{blog.fileupload.url}}">GET</a>
+                        </div><!-- end meta -->
+                    </div>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+<div class="container d-flex flex-wrap px-5">
+        <div class="col">     
+        <ul class="pagination">
+                {% if blogs.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=blogs.previous_page_number">Previous</a></li>
+                {% endif %}
+      
+                {% for page_number in blogs.paginator.page_range %}
+                <li class="page-item"><a class="page-link"  href="?page={{page_number}}">{{page_number}}</a></li> 
+                {% endfor %}
+
+                {% if blogs.has_next %}
+                <li class="page-item"><a class="page-link" href="?page=blogs.next_page_number">Next</a></li>
+                {% endif %} 
+        </ul>
+       </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end col -->
+
+
+  
+
+<!--<div class="container-lg ">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 ">
+        {% for blog in blogs %}
+        <div class="col ">     
+          <div class="card mb-3 rounded-3 shadow-sm border-light">
+            <div class="card-header py-3">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <div class="blog-meta"> 
+                    <span><button type="button" class="btn btn-warning "><a class="text-decoration-none" style ="color:#000000"  href="{%url 'searchCategory' blog.category_id %}" title="">{{blog.category}}</a></button></span>  
+                    <h4><a class="text-decoration-none" href="{%url 'blogDetail' blog.id %}" title="">{{blog.name}}</a></h4>
+                    <small><a class="text-decoration-none" href="#" title="">{{blog.created}}</a></small>
+                    <small><a class="text-decoration-none" href="{% url 'searchWriter' blog.writer %}" title="">by {{blog.writer}}</a></small>
+                    <small><a class="text-decoration-none" href="#" title=""><i class="fa fa-eye"></i> {{blog.views | intcomma}}</a></a></small>
+                    <a class="w-40 btn btn-sm btn-outline-warning" href="{{blogs.file.url}}" role="button">GET</a>
+                </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</div>-->
+
+
+<!--End First Secsion-->
+
+    <!--main-->
+<!--<div class="container-lg ">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 ">
+        {% for blog in latest %}
+        <div class="col ">
+          <div class="card mb-3 rounded-3 shadow-sm border-light">
+            <div class="card-header py-3">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <div class="blog-meta"> 
+                    <span><button type="button" class="btn btn-warning "><a class="text-decoration-none" style ="color:#000000"  href="{%url 'searchCategory' blog.category_id %}" title="">{{blog.category}}</a></button></span>  
+                    <h4><a class="text-decoration-none" href="{%url 'blogDetail' blog.id %}" title="">{{blog.name}}</a></h4>
+                    <small><a class="text-decoration-none" href="#" title="">{{blog.created}}</a></small>
+                    <small><a class="text-decoration-none" href="{% url 'searchWriter' blog.writer %}" title="">by {{blog.writer}}</a></small>
+                    <small><a class="text-decoration-none" href="#" title=""><i class="fa fa-eye"></i> {{blog.views | intcomma}}</a></a></small>
+                    <a class="w-40 btn btn-sm btn-outline-warning" href="{{blog.file.url}}" role="button">GET</a>
+                </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</div>-->
+
+<!--<div class="container-md">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 " >
+        {% for blog in second %}
+        <div class="col ">
+          <div class="card mb-3 rounded-3 shadow-sm border-light">
+            <div class="card-header py-3">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+            </div>
+            <div class="card-body">
+              <div class="blog-meta">
+                <span><button type="button" class="btn btn-warning"><a class="text-decoration-none" style ="color:#000000" href="{%url 'searchCategory' blog.category_id %}" title="">{{blog.category}}</a></button></span> 
+                <h4><a class="text-decoration-none" href="{%url 'blogDetail' blog.id %}" title="">{{blog.name}}</a></h4>
+                <small><a class="text-decoration-none" href="#" title="">{{blog.created}}</a></small>
+                <small><a class="text-decoration-none" href="{% url 'searchWriter' blog.writer %}" title="">by {{blog.writer}}</a></small>
+                <small><a class="text-decoration-none" href="#" title=""><i class="fa fa-eye"></i> {{blog.views | intcomma}}</a></a></small>
+                {% comment %} <a class="w-40 btn btn-sm btn-outline-warning" href="{{blogs.file.url}}" role="button">GET</a> {% endcomment %}
+
+            </div> 
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>-->
+
+<!--<div class="container-md">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 ">
+        {% for blog in last %}
+        <div class="col">
+          <div class="card mb-3 rounded-3 shadow-sm border-light ">
+            <div class="card-header py-3 ">
+                <img src="{{blog.image.url}}" alt="" class="img-fluid">
+            </div>
+            <div class="card-body">
+              <div class="blog-meta">
+                <span><button type="button" class="btn btn-warning"><a class="text-decoration-none" style ="color:#000000" href="{%url 'searchCategory' blog.category_id %}" title="">{{blog.category}}</a></button></span> 
+                <h4><a class="text-decoration-none" href="{%url 'blogDetail' blog.id %}" title="">{{blog.name}}</a></h4>
+                <small><a class="text-decoration-none" href="#" title="">{{blog.created}}</a></small>
+                <small><a class="text-decoration-none" href="{% url 'searchWriter' blog.writer %}" title="">by {{blog.writer}}</a></small>
+                <small><a class="text-decoration-none" href="#" title=""><i class="fa fa-eye"></i> {{blog.views | intcomma}}</a></a></small>
+                <button type="button" class="w-40 btn btn-sm btn-outline-warning">Get</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>-->
+             
+    <!--end main-->
+
+    
+    <div class="container-md">
+        {% block content %}
+
+            {% endblock %}  
+
+    </div>
+
+
+<!--widget-->
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-muted">&copy; SDN/ArtWork | sdnthailand.com</p>
+  
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <img class="d-block mx-auto" src="{% static 'frontend/images/version/Aw.svg ' %}" alt="" width="80" height="57">
+      </a>
+  
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item "><a class="nav-link" style ="color:#808B96" href="/">SDN/ArtWork</a></li>
+        {% comment %} <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li> {% endcomment %}
+      </ul>
+    </footer>
+    <div class="dmtop">Scroll to Top</div>
+  </div>
+
+        {% comment %} <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="widget">
+                            <div class="footer-text text-left p-5">
+                               
+                                <!-- <div class="social">
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                </div> -->
+                              
+                                </div><!-- end newsletter -->
+                            </div><!-- end footer-text -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                    
+                    <!--<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget p-5">
+                            <h2 class="widget-title">Copyrights</h2>
+                            <div class="link-widget">
+                                <ul>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Advertising</a></li>
+                                    <li><a href="#">Write for us</a></li>
+                                    <li><a href="#">Trademark</a></li>
+                                    <li><a href="#">License & Help</a></li>
+                                </ul>
+                            </div><
+                        </div>
+                    </div><!-- end col -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <div class="copyright">&copy; SDN/ArtWork | sdnthailand.com</a>.</div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+        <div class="dmtop">Scroll to Top</div> {% endcomment %}
+       
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="{% static 'frontend/js/jquery.min.js' %} "></script>
+    <script src="{% static 'frontend/js/tether.min.js ' %}"></script>
+    <script src="{% static 'frontend/js/bootstrap.min.js' %} "></script>
+    <script src="{% static 'frontend/js/custom.js' %} "></script>
+    <script src="{% static 'frontend/js/Modal.js' %} "></script>
+    <!-- JavaScript Bundle with Popper -->
+   <!-- JavaScript Bundle with Popper -->
+
+
+</body>
+</html>
